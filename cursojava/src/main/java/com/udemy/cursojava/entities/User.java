@@ -3,10 +3,21 @@ package com.udemy.cursojava.entities;
 import java.io.Serializable;
 import java.util.Objects;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
+@Table(name = "tb_user")
 public class User implements Serializable{
 	
 	
 	private static final long serialVersionUID = 1L;
+	
+	@Id //Informa que o ID é chave primaria
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // Informa que a chave é autoincrementada
 	private Long id;
 	private String name;
 	private String email;
