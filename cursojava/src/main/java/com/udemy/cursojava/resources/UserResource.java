@@ -33,7 +33,7 @@ public class UserResource {
 
 	}
 	
-	@GetMapping(value = "/{id}") //Indica que a requisiçã aceita um id dentro da url
+	@GetMapping(value = "/{id}") //Indica que a requisição aceita um id dentro da url
 	public ResponseEntity<User> findById(@PathVariable Long id){
 		User obj = service.findById(id);
 		return ResponseEntity.ok().body(obj);
